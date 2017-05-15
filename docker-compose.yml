@@ -1,0 +1,15 @@
+version: '2'
+services:
+    shit-app:
+        build: 'shit-app/.'
+        ports:
+            - "8080"
+        networks:
+            - mynet
+    redis:
+        image: 'redis:alpine'
+        networks:
+            - mynet
+networks:
+    mynet:
+        driver: overlay
